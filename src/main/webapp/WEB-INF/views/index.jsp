@@ -23,7 +23,7 @@
       <img src="/resources/images/c2.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="/resources/images/c3.jpg." class="d-block w-100" alt="...">
+      <img src="/resources/images/c3.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
 </div>

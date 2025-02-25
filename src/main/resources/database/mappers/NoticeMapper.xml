@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.winter.app.notices.NoticeDAO">
+  
+    	<select id="getList"  resultType="NoticeDTO">
+  		SELECT * FROM NOTICE ORDER BY NOTICENUM DESC
+  		  	</select>
+  		 <select id="getDetail" parameterType="NoticeDTO"  resultType="NoticeDTO">
+  			SELECT * FROM NOTICE 
+  			WHERE BOARDNUM=#{boardNum}
+  		  	</select> 	
+  		 <select id="add" resultType="NoticeDTO">
+  			INSERT INTO NOTICE (BOARDNUM, USERNAME, BOARDTITLE, BOARDDATE, BOARDCONTENTS, BOARDHIT)
+  			VALUES(NOTICE_SEQ.NEXTVAL, #{userName}, #{boardTitle}, SYSDATE, #{boardContents}, #{boardHit})
+  		  	</select> 	
+  		  	 <select id="update" parameterType="NoticeDTO"  resultType="NoticeDTO">
+  		 	UPDATE  NOTICE SET
+  		 	BOARDTITLE = #{boardTitle}
+  		 	BOARDCONTENTS = #{boardContents}
+  		  	</select> 	  		  	
+  	 		 <select id="delete" parameterType="NoticeDTO"  resultType="NoticeDTO">
+  		  	DELETE NOTICE WHERE BOARDNUM = #{boardNum}
+  		  	</select> 	 	
+  		  	<update id="updateHit" parameterType="NoticeDTO">
+	  			UPDATE NOTICE SET BOARDHIT=BOARDHIT+1
+	  			WHERE BOARDNUM=#{boardNum}		
+  				</update>
+  
+  </mapper>

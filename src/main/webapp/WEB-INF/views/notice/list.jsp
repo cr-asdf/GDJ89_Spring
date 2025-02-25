@@ -14,30 +14,34 @@
 <div class="continer-fluid my-5">
 	<div class="row col-md-8 offset-md-2">
 		<!-- contents 내용 작성 -->
-		<h1>Product List Page</h1>
-		
+		<h1>Notice List Page</h1>
+		<form action="/notice/list" method="post"></form>
+	
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Num</th>
-					<th>상품명</th>
-					<th>이자율</th>
+					<th>NO</th>
+					<th>TITLE</th>
+					<th>WRITER</th>
+						<th>DATE</th>
+							<th>HIT</th>
+								
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${list}" var="v">
 				<tr>
-					<td>${v.productNum}</td>
-					<td><a href="./detail/do?producuNum="${v.productNum}>${v.productName}</a></td>
-					<td>${v.productRate}</td>
-					
+					<td>${v.boardNum}</td>
+					<td><a href="./detail?boardNum=${v.boardNum}">${v.boardName}</a></td>
+					<td>${v.userName}</td>
+					<td>${v.boardDate}</td>
+					<td>${v.boardHit}</td>
 				</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 		
-		<a href="./add" class="btn btn-outline-success">상품 등록</a>
-		
+		<a href="./add" class="btn btn-outline-success">글 작성</a>
 	</div>
 </div>
 

@@ -15,15 +15,16 @@
 
 <div class ="container-fluid my- 5">
 	<div class ="row col-md-8 offset-md-2">
-	<!-- contents  내용 작성 -->
-	<h1> Product Detail Page</h1>
-	
-	<h3>${dto.productName} </h3>
-	<h3>${dto.productRate} </h3>
-	
-	<a href="./update" class="btn btn-outline-success">상품 수정</a>
-	<a href="./delete" class =btn-btn-outline-success>상품삭제</a>
-	
+	<!-- contents  -->
+	<div class="alert alert-primary" role="alert">
+			${sessionScope.user.userName} 
+			</div>
+	<div class="alert alert-primary" role="alert">
+			${sessionScope.user} 
+			</div>
+	<div class="alert alert-primary" role="alert">
+			${sessionScope.user.email} 
+			</div>			
 </div>
 </div>
 <c:import url="/WEB-INF/views/template/layout_footer.jsp"></c:import>
@@ -31,10 +32,3 @@
 </body>
 </html>
 
-
-
-
-<c:import url="../template/layout_footer.jsp"></c:import>:
-<c:import url="../template/boot_js.jsp"></c:import>:
-</body>
-</html>
